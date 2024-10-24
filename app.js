@@ -14,7 +14,7 @@ function wishMe() {
     const hour = day.getHours();
 
     if (hour >= 0 && hour < 12) {
-        speak("Good Morning Boss...");
+        speak("Good Morning master Armin...");
     } else if (hour >= 12 && hour < 17) {
         speak("Good Afternoon Master Armin...");
     } else {
@@ -77,11 +77,11 @@ function takeCommand(message) {
         window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "").trim()}`, "_blank");
         const finalText = "This is what I found on Wikipedia regarding " + message;
         speak(finalText);
-    } else if (message.includes('what time is it?')) {
+    } else if (message.includes('time')) {
         const time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" });
         const finalText = "The current time is " + time;
         speak(finalText);
-    } else if (message.includes('what date today?')) {
+    } else if (message.includes('date')) {
         const date = new Date().toLocaleString(undefined, { month: "short", day: "numeric" });
         const finalText = "Today's date is " + date;
         speak(finalText);
